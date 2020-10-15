@@ -1,9 +1,9 @@
-package org.test.repo;
+package org.testwork.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.test.domain.Device;
-import org.test.domain.Project;
+import org.testwork.domain.Device;
+import org.testwork.domain.Project;
 
 import java.util.List;
 

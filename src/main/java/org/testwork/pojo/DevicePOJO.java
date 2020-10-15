@@ -1,4 +1,4 @@
-package org.test.pojo;
+package org.testwork.pojo;
 
 import java.util.Map;
 

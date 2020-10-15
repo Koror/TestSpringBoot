@@ -1,7 +1,7 @@
-package org.test.domain;
+package org.testwork.domain;
 
 import lombok.Data;
-import org.test.enums.Type;
+import org.testwork.enums.Type;
 
 import javax.persistence.*;
 import java.util.Date;

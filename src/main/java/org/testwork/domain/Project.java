@@ -1,4 +1,4 @@
-package org.test.domain;
+package org.testwork.domain;
 
 import lombok.Data;
 

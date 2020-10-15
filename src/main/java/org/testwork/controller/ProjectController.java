@@ -1,16 +1,16 @@
-package org.test.controller;
+package org.testwork.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.test.enums.Type;
-import org.test.domain.Device;
-import org.test.domain.Event;
-import org.test.domain.Project;
-import org.test.pojo.DevicePOJO;
-import org.test.pojo.ProjectPOJO;
-import org.test.repo.DeviceRepo;
-import org.test.repo.ProjectRepo;
+import org.testwork.enums.Type;
+import org.testwork.domain.Device;
+import org.testwork.domain.Event;
+import org.testwork.domain.Project;
+import org.testwork.pojo.DevicePOJO;
+import org.testwork.pojo.ProjectPOJO;
+import org.testwork.repo.DeviceRepo;
+import org.testwork.repo.ProjectRepo;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package org.test.enums;
+package org.testwork.enums;
 
 public enum Type {
     event,
