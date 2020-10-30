@@ -19,6 +19,6 @@ public class Device {
     @JoinColumn(name = "serial_number")
     private String serialNumber;
 
-    @OneToMany
+    @OneToMany(mappedBy = "device")
     private List<Event> events;
 }

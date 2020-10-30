@@ -27,14 +27,14 @@ public class ProjectController {
 
     @GetMapping("/project/{id}")
     public List<DevicePOJO> getProject(@PathVariable("id") Long projectId){
+        List<Device> deviceList = projectRepo.getOne(projectId).getDevices();
         List<DevicePOJO> devicePOJOS = new ArrayList<>();
-        List<Device> deviceList = projectRepo.getDevicesByProjectId(projectId);
         for(Device device: deviceList){
             DevicePOJO devicePOJO = new DevicePOJO();
             devicePOJO.setId(device.getId());
             devicePOJO.setSerialNumber(device.getSerialNumber());
             devicePOJO.setProjectId(projectId);
-            List<Event> eventList = deviceRepo.getEventsByDeviceId(device.getId());
+            List<Event> eventList = deviceRepo.getOne(device.getId()).getEvents();
             boolean hasErrors = false;
             int eventCount = 0;
             int warningCount = 0;
@@ -71,13 +71,13 @@ public class ProjectController {
             projectPOJO.setId(project.getId());
             projectPOJO.setName(project.getName());
             Map<String, Integer> stats = new HashMap<>();
-            List<Device> deviceList = projectRepo.getDevicesByProjectId(project.getId());
+            List<Device> deviceList = projectRepo.getOne(project.getId()).getDevices();
             int deviceCount = deviceList.size();
             int deviceWithErrors = 0;
             int stableDevices = 0;
             for(Device device: deviceList){
                 boolean stable = true;
-                List<Event> eventList = deviceRepo.getEventsByDeviceId(device.getId());
+                List<Event> eventList = deviceRepo.getOne(device.getId()).getEvents();
                 for(Event event: eventList){
                     //Проверка за текущий день
                     if((new Date().getTime() - event.getDate().getTime()) < 86400000)

@@ -15,6 +15,6 @@ public class Project {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "project")
     private List<Device> devices;
 }
